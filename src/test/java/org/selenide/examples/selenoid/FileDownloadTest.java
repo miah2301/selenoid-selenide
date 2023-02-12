@@ -24,6 +24,6 @@ public class FileDownloadTest {
   @Test
   void myTest() {
     open("https://yandex.ru");
-    Selenide.sleep(100000);
+    Selenide.sleep(10000);
   }
 }

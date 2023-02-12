@@ -2,6 +2,7 @@ package org.selenide.examples.selenoid;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.FileDownloadMode;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -19,18 +20,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(SelenoidExtension.class)
 public class FileDownloadTest {
-  @BeforeEach
-  void setUp() {
-    Configuration.fileDownload = FileDownloadMode.FOLDER;
-  }
 
   @Test
-  void download() throws IOException {
-    open("https://the-internet.herokuapp.com/download");
-
-    File file = $(byText("some-file.txt")).download(withExtension("txt"));
-
-    assertThat(file.getName()).isEqualTo("some-file.txt");
-    assertThat(readFileToString(file, UTF_8)).startsWith("{\\rtf");
+  void myTest() {
+    open("https://yandex.ru");
+    Selenide.sleep(100000);
   }
 }

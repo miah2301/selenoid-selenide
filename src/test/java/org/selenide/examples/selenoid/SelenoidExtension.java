@@ -4,15 +4,18 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.extension.BeforeAllCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 class SelenoidExtension implements BeforeAllCallback  {
   @Override
-  public void beforeAll(ExtensionContext context) {
-    Configuration.remote = "http://212.193.51.177:4444/wd/hub";
+  public void beforeAll(ExtensionContext context) throws MalformedURLException {
+
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.downloadsFolder = "target/downloads";
 
@@ -38,6 +41,7 @@ class SelenoidExtension implements BeforeAllCallback  {
       /* How to enable video recording */
       put("enableVideo", true);
     }});
+    RemoteWebDriver driver = new RemoteWebDriver(new URL("http://212.193.51.177:4444/wd/hub"), options);
 
     /*Map<String, Boolean> options = new HashMap<>();
     options.put("enableVNC", true);

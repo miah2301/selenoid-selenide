@@ -11,7 +11,7 @@ import java.util.Map;
 class SelenoidExtension implements BeforeAllCallback  {
   @Override
   public void beforeAll(ExtensionContext context) {
-    Configuration.remote = "http://192.168.1.115:4444/wd/hub";
+    Configuration.remote = "http://212.193.51.177:4444/wd/hub";
     Configuration.reportsFolder = "target/surefire-reports";
     Configuration.downloadsFolder = "target/downloads";
 

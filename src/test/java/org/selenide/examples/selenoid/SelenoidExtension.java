@@ -21,7 +21,7 @@ class SelenoidExtension implements BeforeAllCallback  {
     options.put("enableLog", true);
 
     ChromeOptions capabilities = new ChromeOptions();
-    capabilities.setBrowserVersion("100.0");
+    capabilities.setBrowserVersion("109.0");
     Configuration.browserCapabilities = capabilities;
     Configuration.browserCapabilities.setCapability("selenoid:options", options);
   }

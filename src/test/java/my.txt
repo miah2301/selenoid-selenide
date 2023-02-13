@@ -1,0 +1,5 @@
+mvn clean test -Dtest=xxx.**
+mvn surefire:test -Dtest=xxx.xxx.*Test
+
+
+sudo apt-get install docker-ce=5:20.10.19~3-0~debian-bullseye docker-ce-cli=5:20.10.19~3-0~debian-bullseye containerd.io docker-buildx-plugin docker-compose-plugin
